@@ -19,7 +19,15 @@ namespace LoggingKata
 
             // use File.ReadAllLines(path) to grab all the lines from your csv file
             // Log and error if you get 0 lines and a warning if you get 1 line
-            var lines = File.ReadAllLines(csvPath);
+            string [] lines = File.ReadAllLines(csvPath);
+            if (lines.Length == 0)
+            {
+                logger.LogError("file has no input");
+            }
+            if (lines.Length == 1)
+            {
+                logger.LogWarning("File only has 1 line");
+            }
 
             logger.LogInfo($"Lines: {lines[0]}");
 
@@ -27,9 +35,14 @@ namespace LoggingKata
             var parser = new TacoParser();
 
             // Grab an IEnumerable of locations using the Select command: var locations = lines.Select(parser.Parse);
-            var locations = lines.Select(parser.Parse).ToArray();
+            var locations = lines.Select( parser.Parse);
 
             // DON'T FORGET TO LOG YOUR STEPS
+            if(lines.Length == 0)
+            {
+                logger.LogError("location has no input");
+            }
+            if (lines)
 
             // Now that your Parse method is completed, START BELOW ----------
 

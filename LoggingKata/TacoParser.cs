@@ -18,6 +18,7 @@
             if (cells.Length < 3)
             {
                 // Log that and return null
+                logger.LogWarning("less than 3 items. Incomplete data");
                 // Do not fail if one record parsing fails, return null
                 return null; // TODO Implement
             }
@@ -33,16 +34,23 @@
             // which is similar to parsing a string as an `int`
 
             // You'll need to create a TacoBell class-DONE!!
-            // that conforms to ITrackable
+            // that conforms to ITrackable 
 
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
-            var taco = new TacoBell();
+            var tacobell = new TacoBell();
+            Point location = tacobell.Location;
+
+
+
+
+
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable
+            return new TacoBell();
 
-            return null;
+
         }
     }
 }
