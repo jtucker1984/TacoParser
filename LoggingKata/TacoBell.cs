@@ -6,8 +6,8 @@ namespace LoggingKata
         public TacoBell()
         {
         }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Point Location { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get ; set ; }
+        public Point Location { get ; set ; }
     
 
   
